@@ -1,0 +1,158 @@
+<section class="welcome">
+    <div class="container">
+        <div class="text-center">
+            <h1 class="text-white hero-heading ls-1">Schedule An Appointment</h1>
+        </div>
+    </div>
+</section>
+
+<section class="appointment-block">
+    <div class="container">
+        <div class="row g-lg-5 g-md-4 g-3">
+            <div class="col-md-4 col-sm-4 col-12 mb-md-5 mb-sm-4 mb-3">
+                <a href="#!">
+                    <div class="appointment-col fade-apt-block">
+                        <div class="appoint-content text-center text-white h-100 bgcol-hover shadow-none">
+                            <img src="icons/upcoming-appointment-white.svg" alt="Upcoming Appointment">
+                            <h2 class="fw-700 fs-20 ls-1 mt-4">Upcoming Appointments</h2>
+                            <p class="fw-400 fs-20 ls-1 mt-4">View/Cancel upcoming appointments here</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-4 col-12 mb-md-5 mb-sm-4 mb-3">
+                <a href="#!">
+                    <div class="appointment-col active-apt-block">
+                        <div class="appoint-content text-center text-white h-100 bgcol-hover shadow-none">
+                            <img src="icons/schedule-appointment-white.svg" alt="Schedule Appointment">
+                            <h2 class="fw-700 fs-20 ls-1 mt-4">Schedule An Appointment</h2>
+                            <p class="fw-400 fs-20 ls-1 mt-4">Schedule your appointments here</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-4 col-12 mb-md-5 mb-sm-4 mb-3">
+                <a href="#!">
+                    <div class="appointment-col fade-apt-block">
+                        <div class="appoint-content text-center text-white h-100 bgcol-hover shadow-none">
+                            <img src="icons/upload-document-white.svg" alt="Upload Document">
+                            <h2 class="fw-700 fs-20 ls-1 mt-4">Upload Documents</h2>
+                            <p class="fw-400 fs-20 ls-1 mt-4">Upload documents for your upcoming appointments here</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+
+<section class="step-form">
+    <div class="container">
+        <div class="step-form-block">
+            <ul class="d-flex align-items-start justify-content-xl-center justify-content-between flex-wrap ps-0">
+                <li class="list-unstyled">
+                    <div class="steps step-1" [class.activeStep]="isActive(1)">
+                        <h6 class="step-icon" [class.active]="isActive(1)" [class.completed]="isCompleted(1)">1</h6>
+                        <p class="step-icon-content">Start</p>
+                    </div>
+                </li>
+                <li class="list-unstyled">
+                    <div class="stepper-horizontal-line active-line d-xl-block d-none" [class.active-line]="isLineActive(1)"></div>
+                </li>
+                <li class="list-unstyled">
+                    <div class="steps step-2" [class.activeStep]="isActive(2)">
+                        <h6 class="step-icon" [class.active]="isActive(2)" [class.completed]="isCompleted(2)">2</h6>
+                    </div>
+                </li>
+
+                <li class="list-unstyled">
+                    <div class="stepper-horizontal-line d-xl-block d-none" [class.active-line]="isLineActive(2)"></div>
+                </li>
+                <li class="list-unstyled">
+                    <div class="steps step-3" [class.activeStep]="isActive(3)">
+                        <h6 class="step-icon" [class.active]="isActive(3)" [class.completed]="isCompleted(3)">3</h6>
+                    </div>
+                </li>
+                <li class="list-unstyled">
+                    <div class="stepper-horizontal-line d-xl-block d-none" [class.active-line]="isLineActive(3)"></div>
+                </li>
+                <li class="list-unstyled">
+                    <div class="steps step-4" [class.activeStep]="isActive(4)">
+                        <h6 class="step-icon" [class.active]="isActive(4)" [class.completed]="isCompleted(4)">4</h6>
+                    </div>
+                </li>
+                <li class="list-unstyled">
+                    <div class="stepper-horizontal-line d-xl-block d-none" [class.active-line]="isLineActive(4)"></div>
+                </li>
+                <li class="list-unstyled">
+                    <div class="steps step-5" [class.activeStep]="isActive(5)">
+                        <h6 class="step-icon" [class.active]="isActive(5)" [class.completed]="isCompleted(5)">5</h6>
+                        <p class="step-icon-content">Finish</p>
+                    </div>
+                </li>
+            </ul>
+
+            <p class="text-label"><span>Note:</span> Please Finish the process to book the Appointment.</p>
+
+
+            <div class="form-content bg-white">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <h2 class="text-capitalize primary-color">{{ getStepHeader() }}</h2>
+                    <p class="timer mb-0 d-flex align-items-center "><img src="icons/timer.svg" alt="Timer"><span
+                            class="fw-400 text-black fs-22">{{displayTimer}}</span></p>
+                </div>
+
+                <!-- step form 1 -->
+                <div *ngIf="isActive(1)">
+                    <app-step-one></app-step-one>
+                    <div class="col-md-12 text-end mt-5 mb-sm-5 mb-4">
+                        <button type="submit" (click)="nextStep()" class="btn btn-secondary text-white">Next</button>
+                    </div>
+                </div>
+
+
+                <!-- step form 2 -->
+                <div *ngIf="isActive(2)">
+                    <app-step-two></app-step-two>
+                    <div class="col-md-12 text-end mt-5 mb-sm-5 mb-4">
+                        <button type="submit" (click)="previousStep()"class="btn btn-secondary bg-white transparent-btn">Back</button>
+                        <button type="submit" (click)="nextStep()" class="btn btn-secondary text-white ms-4">Next</button>
+                    </div>
+                </div>
+
+                <!-- step form 3 -->
+                <div *ngIf="isActive(3)">
+                    <app-step-three></app-step-three>
+                    <div class="col-md-12 text-end mt-5">
+                        <button type="submit" (click)="previousStep()" class="btn btn-secondary bg-white transparent-btn">Back</button>
+                        <button type="submit" (click)="nextStep()" class="btn btn-secondary text-white ms-4">Next</button>
+                    </div>
+                </div>
+
+
+                <!-- step form 4 -->
+                <div *ngIf="isActive(4)">
+                    <app-step-four></app-step-four>
+                    <div class="col-md-12 text-end mt-5">
+                        <button type="submit" (click)="previousStep()" class="btn btn-secondary bg-white transparent-btn">Back</button>
+                        <button type="submit" (click)="nextStep()" class="btn btn-secondary text-white ms-4">Next</button>
+                    </div>
+                </div>
+
+                <!-- step form 4 -->
+
+                <div *ngIf="isActive(5)">
+                    <app-step-five></app-step-five>
+                    <div class="col-md-12 text-end mt-5 d-flex justify-content-end align-items-center">
+                        <button type="submit" class="btn text-white ms-4 print-btn">Print Details</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>

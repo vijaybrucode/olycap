@@ -1,0 +1,40 @@
+<div class="row gx-sm-5 gx-3 custom-form-pad custom-tb-border mx-0">
+    <div class="col-lg-6 col-md-12 mb-sm-5 mb-4">
+        <div class="calendar-block">
+            <app-custom-calendar (selectedDateChange)="onSelectedDateChange($event)"></app-custom-calendar>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-12 mb-sm-5 mb-4">
+        <div class="select-appointment">
+            <div class="row">
+                <div class="col-6" *ngFor="let time of appointmentTimes">
+                    <p class="mb-4 appoint-time" [ngClass]="{ 'active-time': selectedTime === time }" >
+                        <input type="radio" [id]="time" name="radio-group" [(ngModel)]="selectedTime" [value]="time">
+                        <label class="label-radio" [for]="time">{{ time }}</label>
+                    </p>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="row selected-date-time">
+            <div class="col-md-4 col-6 mb-md-4 mb-sm-2 mb-3">
+                <p class="custom-label w-100 mb-2">Date of Appointment</p>
+            </div>
+        
+            <div class="col-md-8 col-6 mb-md-4 mb-sm-2 mb-3">
+                <p *ngIf="selectedDate" class="custom-label w-100 mb-2 warning-text-color">{{ selectedDate | date:'fullDate' }} </p>
+            </div>
+        
+            <div class="col-md-4 col-6 mb-md-4 mb-sm-2 mb-3">
+                <p class="custom-label w-100 mb-2">Time of Appointment</p>
+            </div>
+        
+            <div class="col-md-8 col-6 mb-md-4 mb-sm-2 mb-3">
+                <p *ngIf="selectedTime" class="custom-label w-100 mb-2 warning-text-color">{{ selectedTime }}</p>
+            </div>
+        </div>
+    </div>
+</div>

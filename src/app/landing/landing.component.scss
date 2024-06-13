@@ -1,0 +1,218 @@
+.main-imp-notice-container {
+    .inner-imp-container {
+        margin-top: 4rem;
+        background-color: var(--warning-bg-color);
+        border-radius: var(--radius-16);
+        padding: 3.2rem;
+        border-bottom: 2px solid var(--warning-color);
+
+        .speaker-icon {
+            background-color: var(--warning-color);
+            border-radius: var(--radius-7);
+            padding: 0.5rem;
+        }
+
+        .warning-text {
+            font-size: var(--fs-20);
+            font-weight: var(--fw-400);
+            color: var(--warning-color);
+        }
+
+        .notice-text {
+            margin-top: 3rem;
+
+            p {
+                font-size: var(--fs-22);
+                font-weight: var(--fw-400);
+                color: var(--warning-text-color);
+                margin-bottom: 2.5rem;
+                line-height: 1.4;
+            }
+        }
+
+        .notice-img {
+            height: 42.6rem;
+            max-width: 24.5rem;
+
+            img {
+                border-radius: 1.6rem;
+            }
+
+        }
+    }
+}
+
+.main-docs-container {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+
+    .inner-docs-container {
+        background-color: #F1F2ED;
+        border-radius: var(--radius-16);
+        padding: 3.2rem;
+
+        .docs-main-heading {
+            padding: 1.6rem 3.2rem 1.6rem 3.2rem;
+            background-color: var(--white);
+            border-radius: var(--radius-16);
+            margin-top: 1rem;
+
+            &.ofc-location {
+                margin-top: 5rem;
+            }
+
+            h6 {
+                font-size: var(--fs-22);
+                font-weight: var(--fw-500);
+            }
+        }
+
+        .docs-text {
+            padding: 16px 32px 16px 32px;
+
+            p {
+                font-size: var(--fs-22);
+                font-weight: var(--fw-400);
+                color: var(--primary-text-color);
+            }
+        }
+
+        .docs-list {
+            font-size: var(--fs-22);
+            font-weight: var(--fw-400);
+            color: var(--primary-text-color);
+            line-height: 1.2;
+            padding-left: 3.5rem;
+
+            li {
+                margin-bottom: 3rem;
+                line-height: 1.4;
+            }
+        }
+
+        .docs-table {
+            margin-top: 3rem;
+            background-color: #f9f9f9;
+            border-radius: 1rem;
+            outline: 1px solid rgba(111, 108, 144, 0.3);
+
+            h6 {
+                text-align: var(--center);
+                padding: 2rem;
+                margin-bottom: var(--zero);
+            }
+
+            table {
+                width: 50%;
+                border-collapse: collapse;
+                border-radius: 1rem;
+            }
+
+            table,
+            th,
+            td {
+                border: var(--none);
+            }
+
+            th,
+            td {
+                padding: 1rem;
+                text-align: var(--center);
+                background-color: var(--white);
+                font-size: var(--fs-20);
+                color: #6F6C90;
+                border: 1px solid #F1F1FC;
+            }
+        }
+    }
+
+    .liheap {
+        color: #6F6C90;
+        margin-bottom: var(--zero);
+        padding: 3rem;
+    }
+}
+
+
+/*media query starts to here*/
+
+@media only screen and (max-width: 991px) {
+
+    .main-imp-notice-container {
+        .inner-imp-container {
+            padding: 2rem;
+
+            .notice-text {
+                p {
+                    font-size: var(--fs-14) !important;
+                    line-height: var(--lh-lg);
+                }
+            }
+
+            .warning-text {
+                font-size: var(--fs-14) !important;
+            }
+
+            .notice-img {
+                display: var(--none);
+            }
+        }
+    }
+
+
+    .main-docs-container {
+        .inner-docs-container {
+            background-color: #EDEDF2;
+            padding: 1rem;
+
+            .docs-main-heading {
+                padding: 1.2rem 1.5rem 1.2rem 1.5rem;
+
+                h6 {
+                    font-size: var(--fs-14);
+                } 
+            }
+
+            .docs-text {
+                padding: 0.3rem 2rem 0.3rem 2rem !important;
+                p {
+                    font-size: var(--fs-14);
+                }
+            }
+
+            .docs-list {
+
+                padding: var(--zero);
+                background-color: var(--none);
+                border: var(--none);
+
+                li {
+                    font-size: var(--fs-14);
+                    line-height: var(--lh-lg);
+                    margin-bottom: 1rem;
+
+                        h6 {
+                            font-size: var(--fs-14);
+                        }
+                }
+            }
+
+            .docs-table {
+                h6, th, td {
+                    font-size: var(--fs-14);
+                    padding: 1rem;
+                }
+            }
+
+
+        }
+
+        .liheap {
+            font-size: var(--fs-14);
+            padding: 1rem;
+        }
+    }
+
+
+
+}
